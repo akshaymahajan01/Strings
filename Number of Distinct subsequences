@@ -1,0 +1,23 @@
+int distinctSubsequences(string s)
+	{
+	    // Your code goes here
+	    
+	       int mod = 1000000007;
+	       int n = s.length();
+	       vector<long long> arr(n+1,0);
+	       arr[0]=1;
+	       unordered_map<char,int> lo;
+	       
+	       for(int i=1;i<=n;i++)
+	       {
+	           arr[i] = (2*arr[i-1]) % mod;
+	           char ch = s[i-1];
+	           
+	           if(lo.count(ch)){
+	               int j = lo[ch];
+	               arr[i] = (arr[i] - arr[j]+mod) % mod;
+	           }
+	           lo[ch] = (i - 1) % mod;
+	       }
+	        return int(arr[n] % mod);
+	}
