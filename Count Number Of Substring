@@ -2,7 +2,7 @@ class Solution {
 public:
     long substrCount(string S, int K) {
         return atmost(S, K) - atmost(S, K - 1);
-    }
+    } 
 
     long atmost(string s, int k) {
         vector<int> arr(26, 0);
