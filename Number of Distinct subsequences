@@ -8,7 +8,7 @@ int distinctSubsequences(string s)
 	       arr[0]=1;
 	       unordered_map<char,int> lo; 
 	       
-	       for(int i=1;i<=n;i++)
+	       for(int i=1;i<=n;i++) 
 	       {
 	           arr[i] = (2*arr[i-1]) % mod;
 	           char ch = s[i-1];
