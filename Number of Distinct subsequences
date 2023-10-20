@@ -7,7 +7,7 @@ int distinctSubsequences(string s)
 	       vector<long long> arr(n+1,0); 
 	       arr[0]=1;
 	       unordered_map<char,int> lo; 
-	       
+	        
 	       for(int i=1;i<=n;i++) 
 	       {
 	           arr[i] = (2*arr[i-1]) % mod;
