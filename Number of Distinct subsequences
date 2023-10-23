@@ -1,6 +1,6 @@
 int distinctSubsequences(string s)
 	{ 
-	    // Your code goes here 
+	    // Your code goes here  
 	    
 	       int mod = 1000000007;
 	       int n = s.length();
