@@ -11,7 +11,7 @@ int distinctSubsequences(string s)
 	       for(int i=1;i<=n;i++) 
 	       {
 	           arr[i] = (2*arr[i-1]) % mod;
-	           char ch = s[i-1];
+	           char ch = s[i-1]; 
 	           
 	           if(lo.count(ch)){
 	               int j = lo[ch];
