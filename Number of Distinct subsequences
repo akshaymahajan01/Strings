@@ -1,4 +1,4 @@
-int distinctSubsequences(string s)
+ int distinctSubsequences(string s)
 	{ 
 	    // Your code goes here   
 	     
