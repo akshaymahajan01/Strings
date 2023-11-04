@@ -4,7 +4,7 @@
 	     
 	       int mod = 1000000007;
 	       int n = s.length();
-	       vector<long long> arr(n+1,0); 
+	       vector<long long> arr(n+1,0);  
 	       arr[0]=1; 
 	       unordered_map<char,int> lo; 
 	        
