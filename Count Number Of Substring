@@ -21,6 +21,6 @@ public:
 
             res += (i - left + 1);   // in result supoose we have 1 then next time it becomes 2 besically next substring have choice of append or not apppend //
         }
-        return res;
+        return res; 
     }
 };
