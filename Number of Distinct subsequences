@@ -17,7 +17,7 @@
 	               int j = lo[ch];
 	               arr[i] = (arr[i] - arr[j]+mod) % mod;
 	           }
-	           lo[ch] = (i - 1) % mod;
+	            lo[ch] = (i - 1) % mod;
 	       }
 	        return int(arr[n] % mod);
 	}
