@@ -1,0 +1,43 @@
+class Solution {
+public:
+    string minWindow(std::string s, std::string t) {
+        if (s.empty() || t.empty() || s.length() < t.length()) {
+            return "";
+        }
+
+        // Use unordered_map for character count in t
+        vector<int> v(128,0);
+        for (char c : t) {
+            v[c]++;
+        }
+
+        int count = t.length(); // Number of characters to match
+        int left = 0, right = 0; // Window pointers
+        int minLength = INT_MAX; // Minimum length of the window found
+        int startIndex = 0; // Start index of the minimum window
+
+        // Sliding window
+        while (right < s.length()) {
+            if (v[s[right]] > 0) {
+                  count--;
+            }
+            v[s[right]]--;
+            right++;
+
+            while (count == 0) {
+                if (right - left < minLength) {
+                    minLength = right - left;
+                    startIndex = left;
+                }
+
+                v[s[left]]++;
+                if (v[s[left]] > 0) {
+                    count++;
+                }
+                left++;
+            }
+        }
+
+        return minLength == INT_MAX ? "" : s.substr(startIndex, minLength);
+    }
+};
