@@ -13,8 +13,6 @@ public:
         }
 
         return count;
-      
-        
     }
     int countSubstrings(string s) {
 
