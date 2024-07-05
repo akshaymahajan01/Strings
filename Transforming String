@@ -1,0 +1,40 @@
+class Solution
+{
+    public:
+    int transform (string A, string B)
+    {
+        //code here.\
+        
+        int n = A.size();
+        int m = B.size();
+        
+        ///edge case 
+        if (n != m) return -1;
+        
+        int i = n-1;
+        int j = m-1;
+        
+        int count=0;
+        
+        int az[256] = {0};
+        
+        for(int i=0;i<n;i++) az[A[i]]++;
+        for(int i=0;i<m;i++) az[B[i]]--;
+        
+        while(i >= 0 ){
+            
+            if(az[A[i]]) return -1;  // edge case //
+            
+            if(A[i] == B[j]){
+                i--;
+                j--;
+            }else{
+                count++;
+                i--;
+            }
+        }
+            
+        return count;
+        
+    }
+};
